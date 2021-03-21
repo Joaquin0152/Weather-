@@ -7,7 +7,6 @@ function initPage() {
     const currentHumidityEl = document.getElementById("humidity");4
     const currentWindEl = document.getElementById("wind-speed");
     const currentUVEl = document.getElementById("UV-index");
-    let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 const APIKey = '169e58d2ca409af944a54e82aad06492';
 
@@ -38,7 +37,7 @@ function getWeather(cityName){
             UVIndex.innerHTML = response.data[0].value;
             currentUVEl.innerHTML = "UV Index: ";
             currentUVEl.append(UVIndex);
-        });
+    });
         let cityID = response.data.id;
         let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
         axios.get(forecastQueryURL)
