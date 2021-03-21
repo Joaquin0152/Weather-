@@ -43,7 +43,7 @@ function initPage() {
                         currentUVEl.append(UVIndex);
                     });
                 let cityID = response.data.id;
-                let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
+                let forecastQueryURL = "https://api.openweathermap.org/data/2.0/forecast?id=" + cityID + "&appid=" + APIKey;
                 axios.get(forecastQueryURL)
                     .then(function (response) {
                         //  Parse response to display forecast for next 5 days underneath current conditions
